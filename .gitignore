@@ -1,0 +1,76 @@
+# .NET Core
+bin/
+obj/
+out/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# ASP.NET Core secrets
+secrets.json
+
+# Build results
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Rider
+.idea/
+
+# VS Code
+.vscode/
+.history/
+
+# Visual Studio
+*.vs/
+*.dbmdl
+*.bak
+*.cache
+*.pdb
+*.mdb
+*.opendb
+
+# Logs
+*.log
+logs/
+
+# Entity Framework
+Migrations/
+
+# User-specific files
+*.sln.docstates
+*.userprefs
+
+# npm / yarn / pnpm
+node_modules/
+
+# Azure
+.publish/
+*.azure*
+
+# Dotnet tools
+.dotnet-tools/
+
+# OS generated
+Thumbs.db
+.DS_Store
+
+# Test Results
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+*.testlog
+
+# Resharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+
+# JetBrains Rider
+.idea/
+
+# Backup files
+*.bak
+*.tmp
+*.swp
