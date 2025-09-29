@@ -1,4 +1,5 @@
-namespace Invoice.API
+
+namespace InvoiceSystem.API
 {
     public class Program
     {

@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace Invoice.API.Controllers
+namespace InvoiceSystem.API.Controllers
 {
     [ApiController]
     [Route("[controller]")]

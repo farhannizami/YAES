@@ -11,9 +11,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Invoice.Application\Invoice.Application.csproj" />
-    <ProjectReference Include="..\Invoice.Domain\Invoice.Domain.csproj" />
-    <ProjectReference Include="..\Invoice.Infrastructure\Invoice.Infrastructure.csproj" />
+    <ProjectReference Include="..\InvoiceSystem.Application\InvoiceSystem.Application.csproj" />
+    <ProjectReference Include="..\InvoiceSystem.Domain\InvoiceSystem.Domain.csproj" />
+    <ProjectReference Include="..\InvoiceSystem.Infrastructure\InvoiceSystem.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
