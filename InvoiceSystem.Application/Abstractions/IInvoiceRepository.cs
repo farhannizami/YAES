@@ -4,8 +4,8 @@ namespace InvoiceSystem.Application.Abstractions
 {
     public interface IInvoiceRepository
     {
-        Task<Invoice?> GetByIdAsync(Guid id);
         Task AddAsync(Invoice invoice);
+        Task<Invoice?> GetByIdAsync(Guid id);
         Task<List<Invoice>> GetAllAsync();
     }
 }
