@@ -1,0 +1,39 @@
+﻿using InvoiceSystem.Application.Abstractions;
+using InvoiceSystem.Domain.Entities;
+using InvoiceSystem.Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
+
+namespace InvoiceSystem.Infrastructure.Repositories
+{
+    public class InvoiceRepository : IInvoiceRepository
+    {
+        private readonly ApplicationDbContext _db;
+
+        public InvoiceRepository(ApplicationDbContext db)
+        {
+            _db = db;
+        }
+
+        public async Task AddAsync(Invoice invoice)
+        {
+            await _db.Invoices.AddAsync(invoice);
+            await _db.SaveChangesAsync();
+        }
+
+        public async Task<Invoice?> GetByIdAsync(Guid id)
+        {
+            return await _db.Invoices
+                .Include(i => i.Items)
+                .Include(i => i.Customer)
+                .FirstOrDefaultAsync(i => i.Id == id);
+        }
+
+        public async Task<List<Invoice>> GetAllAsync()
+        {
+            return await _db.Invoices
+                .Include(i => i.Items)
+                .Include(i => i.Customer)
+                .ToListAsync();
+        }
+    }
+}
