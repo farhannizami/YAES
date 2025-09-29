@@ -1,4 +1,6 @@
+using InvoiceSystem.Application.Abstractions;
 using InvoiceSystem.Infrastructure.Data;
+using InvoiceSystem.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 namespace InvoiceSystem.API
@@ -18,6 +20,9 @@ namespace InvoiceSystem.API
 
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+            builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
+            builder.Services.AddScoped<IInvoiceRepository, InvoiceRepository>();
 
             var app = builder.Build();
 
