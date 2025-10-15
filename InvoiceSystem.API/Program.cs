@@ -1,4 +1,4 @@
-using InvoiceSystem.Application.Abstractions;
+using InvoiceSystem.Domain.Interfaces;
 using InvoiceSystem.Infrastructure.Data;
 using InvoiceSystem.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;

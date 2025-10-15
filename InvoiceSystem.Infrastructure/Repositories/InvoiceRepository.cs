@@ -1,5 +1,5 @@
-﻿using InvoiceSystem.Application.Abstractions;
-using InvoiceSystem.Domain.Entities;
+﻿using InvoiceSystem.Domain.Entities;
+using InvoiceSystem.Domain.Interfaces;
 using InvoiceSystem.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 

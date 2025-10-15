@@ -1,5 +1,5 @@
-﻿using InvoiceSystem.Application.Abstractions;
-using InvoiceSystem.Domain.Entities;
+﻿using InvoiceSystem.Domain.Entities;
+using InvoiceSystem.Domain.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace InvoiceSystem.API.Controllers
@@ -18,12 +18,12 @@ namespace InvoiceSystem.API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(Guid customerId, DateTime dueDate)
+        public async Task<IActionResult> Create(Guid customerId)
         {
             var customer = await _customerRepo.GetByIdAsync(customerId);
             if (customer == null) return BadRequest("Customer does not exist");
 
-            var invoice = new Invoice(customerId, dueDate);
+            var invoice = new Invoice(customerId);
             await _invoiceRepo.AddAsync(invoice);
 
             return Ok(invoice.Id);

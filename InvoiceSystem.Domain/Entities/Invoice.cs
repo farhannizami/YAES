@@ -5,7 +5,6 @@
             public Guid Id { get; private set; }              // Primary Key
             public Guid CustomerId { get; private set; }      // Foreign Key
             public DateTime CreatedAt { get; private set; }
-            public DateTime DueDate { get; private set; }
             public decimal TotalAmount { get; private set; }
             public Customer? Customer { get; private set; }   // Navigation property
             public List<InvoiceItem> Items { get; private set; } = [];
@@ -14,15 +13,11 @@
             private Invoice() { }
 
             // Constructor to create a valid invoice
-            public Invoice(Guid customerId, DateTime dueDate)
+            public Invoice(Guid customerId)
             {
-                if (dueDate < DateTime.UtcNow)
-                    throw new ArgumentException("Due date must be in the future");
-
                 Id = Guid.NewGuid();
                 CustomerId = customerId;
                 CreatedAt = DateTime.UtcNow;
-                DueDate = dueDate;
                 TotalAmount = 0m;
             }
 

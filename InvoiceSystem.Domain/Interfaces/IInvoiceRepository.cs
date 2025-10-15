@@ -1,6 +1,6 @@
 ﻿using InvoiceSystem.Domain.Entities;
 
-namespace InvoiceSystem.Application.Abstractions
+namespace InvoiceSystem.Domain.Interfaces
 {
     public interface IInvoiceRepository
     {
