@@ -7,7 +7,6 @@
             public DateTime CreatedAt { get; private set; }
             public DateTime DueDate { get; private set; }
             public decimal TotalAmount { get; private set; }
-
             public Customer? Customer { get; private set; }   // Navigation property
             public List<InvoiceItem> Items { get; private set; } = [];
 
