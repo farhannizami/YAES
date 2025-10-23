@@ -15,9 +15,10 @@
         private InvoiceItem() { }
 
         // Constructor for creating items
-        internal InvoiceItem(Invoice invoice, string description, int quantity, decimal unitPrice)
+        public InvoiceItem(Invoice invoice, string description, int quantity, decimal unitPrice)
         {
-            Id = Guid.NewGuid();
+            // This id generation was causing DbUpdateConcurrencyException
+            //Id = Guid.NewGuid();
             InvoiceId = invoice.Id;
             Invoice = invoice;
 

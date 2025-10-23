@@ -7,5 +7,7 @@ namespace InvoiceSystem.Domain.Interfaces
         Task AddAsync(Invoice invoice);
         Task<Invoice?> GetByIdAsync(Guid id);
         Task<List<Invoice>> GetAllAsync();
+        Task UpdateAsync(Invoice invoice);
+        Task DeleteAsync(Invoice invoice);
     }
 }

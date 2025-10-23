@@ -35,5 +35,17 @@ namespace InvoiceSystem.Infrastructure.Repositories
                 .Include(i => i.Customer)
                 .ToListAsync();
         }
+
+        public async Task UpdateAsync(Invoice invoice)
+        {
+            // Invoice is already tracked by EF Core, so no need to call Update
+            await _db.SaveChangesAsync();
+        }
+
+        public async Task DeleteAsync(Invoice invoice)
+        {
+            _db.Invoices.Remove(invoice);
+            await _db.SaveChangesAsync();
+        }
     }
 }
