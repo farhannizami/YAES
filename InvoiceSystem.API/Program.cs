@@ -1,4 +1,6 @@
-using InvoiceSystem.Application.Abstractions;
+using InvoiceSystem.Application.Interfaces;
+using InvoiceSystem.Application.Services;
+using InvoiceSystem.Domain.Interfaces;
 using InvoiceSystem.Infrastructure.Data;
 using InvoiceSystem.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -23,6 +25,9 @@ namespace InvoiceSystem.API
 
             builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
             builder.Services.AddScoped<IInvoiceRepository, InvoiceRepository>();
+
+            builder.Services.AddScoped<ICustomerService, CustomerServices>();
+            builder.Services.AddScoped<IInvoiceService, InvoiceServices>();
 
             var app = builder.Build();
 
